@@ -1,0 +1,25 @@
+{
+  "name": "dom_manipulation_lib",
+  "version": "1.0.0",
+  "description": "this library provides dom functionality",
+  "main": "main.js",
+  "scripts": {
+    "test": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomeralayof/dom-manipulation-lib.git"
+  },
+  "keywords": [
+    "lib"
+  ],
+  "author": "tomer alayof",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomeralayof/dom-manipulation-lib/issues"
+  },
+  "homepage": "https://github.com/tomeralayof/dom-manipulation-lib#readme",
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
