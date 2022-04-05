@@ -1,5 +1,4 @@
 'use strict'
-import tableData from "../../data/tableData.js";
 
 function createTable (data) {  
     if (typeof data != 'object') {
@@ -12,20 +11,19 @@ function createTable (data) {
     
     const {id,tableRows} = data;
     
-    tableData.addData(tableRows);
     table.appendChild(thead);
     table.appendChild(tbody);
     
-    _createFirstRow(thead);
-    _createRest(tbody);
+    _createFirstRow(tableRows,thead);
+    _createRest(tableRows,tbody);
     document.getElementById(id).appendChild(table);
 
-    return tableRows;
+    return data;
 }
     
-function _createFirstRow (thead){ 
+function _createFirstRow (tableRows,thead){ 
     let row = document.createElement("tr");
-    const [firstRow] = tableData.tableRows;
+    const [firstRow] = tableRows;
     for(let data of firstRow) {
         let heading = document.createElement("th");
         heading.innerHTML = data;
@@ -34,8 +32,7 @@ function _createFirstRow (thead){
     thead.appendChild(row);
 }
 
-function _createRest(tbody){
-    const {tableRows} = tableData;
+function _createRest(tableRows,tbody){
     for(let i = 1; i < tableRows.length; i++) {
         let newRow = document.createElement('tr');
         for(let row1 of tableRows[i]) {
@@ -47,8 +44,50 @@ function _createRest(tbody){
     }
 }
 
-
 export default createTable;
+
+
+
+
+
+
+
+
+
+
+
+
+/* function exportTableToExcel(tableID, filename = ''){
+    let downloadLink;
+    const dataType = 'application/vnd.ms-excel';
+    let tableHTML = tableData.rest;
+
+    filename = filename ? `${filename}.xls`:'excel_data.xls';
+
+    downloadLink = document.createElement("a");
+    
+    document.body.appendChild(downloadLink);
+    
+    downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+    downloadLink.download = filename;
+    downloadLink.click();
+}
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-function initLut (tableData) {
+/* function initLut (tableData) {
     let orgenizedData = {};
     for(let i = 0; i < tableData[0].length; i++){
         if(typeof tableData[1][i] === 'number') {
@@ -13,4 +13,4 @@ let commonTableModule = {
     initLut
 }
 
-export default commonTableModule
+export default commonTableModule */

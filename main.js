@@ -1,7 +1,6 @@
-/* import query from "./src/query/query.js"
+ import query from "./src/query/query.js"
 import classModule from "./src/class/class.js"
-import createTable from "./src/elements_creation/table/createUsertable.js" */
-
+import createTable from "./src/elements_creation/table/createUsertable.js"
 import tables from "./src/elements_creation/table/table.js";
 
 const data = {
@@ -15,7 +14,7 @@ const data = {
 }
 
 const frequencyTable = {
-    id: "body",    
+    id: "david",    
     tableRows: [
         ["num of group activity","num of children"],
         [0,22],
@@ -26,12 +25,14 @@ const frequencyTable = {
     ]
 }
 
-
 let dataToCalc = tables.createTable(data);
 
-tables.createAverageTable(dataToCalc,"king");
+console.log(dataToCalc);
 
-tables.createFrequencyTable(frequencyTable);
+
+/* tables.createAverageTable(dataToCalc,"king");
+
+tables.createFrequencyTable(frequencyTable); */
 
 
 
