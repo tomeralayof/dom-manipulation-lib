@@ -29,6 +29,8 @@ let dataToCalc = tables.createTable(data);
 
 tables.createAverageTable(dataToCalc);
 
+console.log('hi');
+
 
 
  tables.createFrequencyTable(frequencyTable);
