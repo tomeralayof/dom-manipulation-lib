@@ -27,12 +27,11 @@ const frequencyTable = {
 
 let dataToCalc = tables.createTable(data);
 
-console.log(dataToCalc);
+tables.createAverageTable(dataToCalc);
 
 
-/* tables.createAverageTable(dataToCalc,"king");
 
-tables.createFrequencyTable(frequencyTable); */
+ tables.createFrequencyTable(frequencyTable);
 
 
 

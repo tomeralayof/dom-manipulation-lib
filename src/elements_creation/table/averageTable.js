@@ -1,21 +1,26 @@
 import tables from "./table.js"
 
-function createAverageTable(tableData,idToPass) {
+function createAverageTable(...tableData) {
 
-    let lut = _initLut(tableData);
-    _setUpLut(lut,tableData);
+    let {tableRows} = tableData[0];
+    
+    let lut = _initLut(tableRows);
 
-    let orgenizedData = _convertDataToTableForm(lut);
-
+    _setUpLut(lut,tableRows);
+    
+    tableRows = _convertDataToTableForm(lut);
+    
     const data = {
-        id: idToPass || "defaultId",
-        tableRows: [...orgenizedData]
+        id: tableData[1] || tableData[0].id,
+        tableRows,
     }
 
+    //add average by priority...
+    
     tables.createTable(data);
 }
 
-function _initLut (tableData) {
+function _initLut (tableData) {    
     let orgenizedData = {};
     for(let i = 0; i < tableData[0].length; i++){
         if(typeof tableData[1][i] === 'number') {
